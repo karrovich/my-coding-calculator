@@ -15,7 +15,12 @@ public class Main {
     }
 
 
-    public static int div(int a, int b) {
-        return a / b;
+    public static int div(int a, int b) throws ArithmeticException {
+        try {
+            return a / b;
+        } catch (ArithmeticException e) {
+            System.err.println("Error. Denominator cannot be zero");
+            throw e;
+        }
     }
 }
